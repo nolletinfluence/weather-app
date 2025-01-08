@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style>
-/* Стиль для основного приложения */
+
 </style>
