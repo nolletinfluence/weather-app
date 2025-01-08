@@ -31,7 +31,6 @@
 </template>
 
 <script>
-// eslint-disable-next-line
 import { getLocation, getWeather, getCitySuggestions, checkCity } from '@/services/weatherService'
 import WeatherCard from '@/components/WeatherCard.vue'
 
@@ -92,7 +91,7 @@ export default {
           throw new Error('Invalid city name');
         }
 
-        // Step 1: Get latitude and longitude based on location
+        // Get latitude and longitude based on location
         const locationData = await getLocation(this.location);
         console.log('Location data:', locationData);
         const { lat: latitude, lon: longitude } = locationData || {};
@@ -100,7 +99,7 @@ export default {
           throw new Error('Location not found');
         }
 
-        // Step 2: Get current weather using latitude and longitude
+        // Get current weather using latitude and longitude
         const weatherData = await getWeather(latitude, longitude);
         console.log('Weather data:', weatherData);
         this.weatherData = weatherData;
